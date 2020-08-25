@@ -58,12 +58,36 @@ header > nav {
   text-decoration: none;
 }
 
+.header-nav a:hover {
+  color: darkslateblue;
+}
+
+.logo-svg {
+  display: block;
+  min-width: 115px;
+  min-height: 28px;
+  background-image: url("../img/logo.svg");
+}
+
+.logo-svg:hover {
+  background-image: url("../img/logo_hover.svg");
+}
+
+.header-logo > a > img:hover {
+  background: red;
+}
+
 /* Login Button */
 .header-button {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-basis: 10%;
+}
+
+.header-button button:hover {
+  background-color: darkslateblue;
+  color: white;
 }
 
 .header-button > button {
@@ -114,6 +138,11 @@ header > nav {
   font-size: 20px;
   text-align: center;
   line-height: 147%;
+}
+
+.contacts-content > a {
+  text-decoration: none;
+  color: black;
 }
 
 /* Team Section */
@@ -177,4 +206,8 @@ footer {
 .footer-socials > a {
   height: 28px;
   padding: 0 .5vw;
+}
+
+.footer-socials img:hover {
+  filter: invert(100%);
 }
