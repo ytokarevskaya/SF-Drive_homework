@@ -6,6 +6,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.mobile-menu {
+  display: none;
+}
+
 h1 {
   font-size: 64px;
   margin: 60px 0 30px 0;
@@ -24,9 +28,11 @@ p {
 
 /* Header */
 header {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 1vh;
+  display: grid;
+  grid-gap: 1vw;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto;
+  padding-top: 2vh;
 }
 
 /* Logo */
@@ -38,27 +44,33 @@ header {
 }
 
 /* Navigation */
-header > nav {
-  flex-basis: 80%;
+.mobile-menu-btn {
+  display: none;
 }
 
-.header-nav {
+header > nav {
   display: flex;
   justify-content: flex-end;
 }
 
-.header-nav > li {
+header > nav > ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+}
+
+header > nav > ul > li {
   font-size: 16px;
   list-style: none;
   padding: 0 30px 0 0;
 }
 
-.header-nav > li > a {
+header > nav > ul> li > a {
   color: black;
   text-decoration: none;
 }
 
-.header-nav a:hover {
+header > nav > ul> li > a:hover {
   color: darkslateblue;
 }
 
@@ -124,14 +136,11 @@ header > nav {
   min-width: 65%;
 }
 
-.contacts-email, .contacts-phone {
-  width: 30%;
-}
-
 .contacts-small-title {
   font-size: 14px;
   text-align: center;
   line-height: 147%;
+  color: #4F4F4F;
 }
 
 .contacts-content {
@@ -195,6 +204,7 @@ footer {
   justify-self: left;
   font-size: 16px;
   color: #FFFFFF;
+  opacity: 0.4;
   padding-left: 2vw;
 }
 
@@ -210,4 +220,185 @@ footer {
 
 .footer-socials img:hover {
   filter: invert(100%);
+}
+
+/* FAQ Questions Section */
+.questions-section {
+  padding: 0 10vw;
+  font-size: 20px;
+}
+
+.question {
+  display: grid;
+  grid-template-columns: auto fit-content(1%);
+  padding: 2vh 0;
+}
+
+.question img:hover {
+  cursor: pointer;
+}
+
+.arrow {
+  transform: rotate(0grad);
+}
+
+.answer {
+  display: none;
+}
+
+.answer-show {
+  display: initial;
+  padding: 2vh 0;
+}
+
+.questions-section ul {
+  list-style: none;
+}
+
+/* Media Requests*/
+
+@media screen and (max-width: 900px) and (min-width: 631px){
+  .team-member > img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .team-member-name {
+    font-size: 16px;
+  }
+
+  .team-member-position {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  header {
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .header-logo {
+    justify-content: flex-start;
+    padding-left: 5vw;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 5vw;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .show {
+    display: initial;
+  }
+
+  .show ul {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .show a {
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  header > nav > ul, .header-button {
+    display: none;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 16px;
+    max-width: 85%;
+  }
+
+  .contacts-section > .contacts > img {
+    display: none;
+  }
+
+  .contacts {
+    flex-direction: column;
+    align-items: center;
+    min-width: initial;
+  }
+
+  .contacts-email, .contacts-phone {
+    width: 100%;
+    padding: 1vh 0 1vh;
+  }
+
+  .contacts-small-title {
+    font-size: 12px;
+  }
+
+  .contacts-content {
+    font-size: 14px;
+  }
+
+  .team-member {
+    width: 40%
+  }
+
+  .team-member > img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .team-member-name {
+    font-size: 16px;
+  }
+
+  .team-member-position {
+    font-size: 12px;
+  }
+
+  footer {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-left: 5vw;
+  }
+
+  .footer-socials {
+    min-width: 40%;
+    justify-content: space-around;
+    padding-bottom: 5vw;
+  }
+}
+
+@media screen and (max-width: 420px){
+  .about-section > img {
+    width: 260px;
+  }
+
+  .team-member > img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .team-member-name {
+    font-size: 12px;
+  }
+
+  .team-member-position {
+    font-size: 10px;
+  }
+
 }
