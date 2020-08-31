@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap');
+$black-color: #000000;
+$darkblue-color: #483D8B;
 
 body {
   margin: 0 auto;
@@ -63,15 +65,15 @@ p {
   font-size: 16px;
   list-style: none;
   padding: 0 30px 0 0;
-}
 
-.navigation-menu__item > a {
-  color: black;
-  text-decoration: none;
-}
+  a {
+    color: $black-color;
+    text-decoration: none;
 
-.navigation-menu__item > a:hover {
-  color: darkslateblue;
+    &:hover {
+      color: $darkblue-color;
+    }
+  }
 }
 
 .logo-svg {
@@ -79,10 +81,10 @@ p {
   min-width: 115px;
   min-height: 28px;
   background-image: url("../img/logo.svg");
-}
 
-.logo-svg:hover {
-  background-image: url("../img/logo_hover.svg");
+  &:hover {
+    background-image: url("../img/logo_hover.svg");
+  }
 }
 
 /* Login Button */
@@ -91,20 +93,20 @@ p {
   justify-content: center;
   align-items: center;
   flex-basis: 10%;
-}
 
-.auth-button button:hover {
-  background-color: darkslateblue;
-  color: white;
-}
+  button {
+    width: 106px;
+    height: 43px;
+    border: 1px solid rgba(27, 27, 27, 0.4);
+    box-sizing: border-box;
+    border-radius: 6px;
+    cursor: pointer;
 
-.auth-button > button {
-  width: 106px;
-  height: 43px;
-  border: 1px solid rgba(27, 27, 27, 0.4);
-  box-sizing: border-box;
-  border-radius: 6px;
-  cursor: pointer;
+    &:hover {
+      background-color: $darkblue-color;
+      color: white;
+    }
+  }
 }
 
 /* Main */
@@ -143,11 +145,11 @@ p {
   font-size: 20px;
   text-align: center;
   line-height: 147%;
-}
 
-.contacts-content > a {
-  text-decoration: none;
-  color: black;
+  a {
+    text-decoration: none;
+    color: $black-color;
+  }
 }
 
 /* Team Section */
@@ -207,15 +209,17 @@ p {
 .footer-socials {
   display: flex;
   padding-right: 1.5vw;
-}
 
-.footer-socials > a {
-  height: 28px;
-  padding: 0 .5vw;
-}
+  a {
+    height: 28px;
+    padding: 0 .5vw;
+  }
 
-.footer-socials img:hover {
-  filter: invert(100%);
+  img {
+    &:hover {
+      filter: invert(100%);
+    }
+  }
 }
 
 /* FAQ Questions Section */
@@ -228,10 +232,12 @@ p {
   display: grid;
   grid-template-columns: auto fit-content(1%);
   padding: 2vh 0;
-}
 
-.questions-list-item img:hover {
-  cursor: pointer;
+  img {
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 .questions-list-item__arrow {
@@ -294,20 +300,19 @@ p {
 
   .show {
     display: initial;
-  }
 
-  .show ul {
-    display: flex;
-    justify-content: space-around;
-    padding-left: 0;
-    list-style: none;
-  }
+    ul {
+      display: flex;
+      justify-content: space-around;
+      padding-left: 0;
+      list-style: none;
+    }
 
-  .show a {
-    text-transform: uppercase;
-    text-decoration: none;
+    a {
+      text-transform: uppercase;
+      text-decoration: none;
+    }
   }
-
   .navigation-menu, .auth-button {
     display: none;
   }
@@ -325,14 +330,14 @@ p {
     max-width: 85%;
   }
 
-  .contacts-section > .contacts > img {
-    display: none;
-  }
-
   .contacts {
     flex-direction: column;
     align-items: center;
     min-width: initial;
+
+    img {
+      display: none;
+    }
   }
 
   .contacts-email, .contacts-phone {
@@ -349,12 +354,12 @@ p {
   }
 
   .team-member {
-    width: 40%
-  }
+    width: 40%;
 
-  .team-member > img {
-    width: 80px;
-    height: 80px;
+    img {
+      width: 80px;
+      height: 80px;
+    }
   }
 
   .team-member-name {
@@ -396,5 +401,4 @@ p {
   .team-member-position {
     font-size: 10px;
   }
-
 }
