@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "css_compile": "node-sass scss/styles.css css/styles.css"
+    "css_compile": "node-sass scss/styles.scss css/styles.css"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,14 @@
   "homepage": "https://github.com/ar10n/SF-Drive_homework#readme",
   "dependencies": {
     "node-sass": "^4.14.1"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^6.1.0",
+    "css-loader": "^4.2.2",
+    "file-loader": "^6.1.0",
+    "mini-css-extract-plugin": "^0.11.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
   }
 }

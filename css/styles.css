@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap");
 body {
-  margin: 0 auto;
-  max-width: 1440px;
   font-family: "Roboto", sans-serif; }
 
 .mobile-menu {
@@ -26,7 +24,9 @@ p {
   grid-gap: 1vw;
   grid-template-columns: auto 1fr auto;
   grid-template-rows: auto;
-  padding-top: 2vh; }
+  padding-top: 2vh;
+  margin: 0 auto;
+  max-width: 1440px; }
 
 /* Logo */
 .logo {
@@ -52,22 +52,19 @@ p {
   font-size: 16px;
   list-style: none;
   padding: 0 30px 0 0; }
+  .navigation-menu__item a {
+    color: #000000;
+    text-decoration: none; }
+    .navigation-menu__item a:hover {
+      color: #483D8B; }
 
-.navigation-menu__item a {
-  color: #000000;
-  text-decoration: none; }
-
-.navigation-menu__item a:hover {
-  color: #483D8B; }
-
-.logo-svg {
+.logo {
   display: block;
   min-width: 115px;
-  min-height: 28px;
-  background-image: url("../img/logo.svg"); }
+  min-height: 28px; }
 
-.logo-svg:hover {
-  background-image: url("../img/logo_hover.svg"); }
+.svg-logo:hover {
+  fill: #483D8B !important; }
 
 /* Login Button */
 .auth-button {
@@ -75,18 +72,18 @@ p {
   justify-content: center;
   align-items: center;
   flex-basis: 10%; }
-
-.auth-button button {
-  width: 106px;
-  height: 43px;
-  border: 1px solid rgba(27, 27, 27, 0.4);
-  box-sizing: border-box;
-  border-radius: 6px;
-  cursor: pointer; }
-
-.auth-button button:hover {
-  background-color: #483D8B;
-  color: white; }
+  .auth-button button {
+    width: 106px;
+    height: 43px;
+    border: 1px solid rgba(27, 27, 27, 0.4);
+    box-sizing: border-box;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: white;
+    font-weight: 700; }
+    .auth-button button:hover {
+      background-color: #483D8B;
+      color: white; }
 
 /* Main */
 /* About Us Section*/
@@ -94,7 +91,9 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5vh 0 5vh 0; }
+  padding: 5vh 0 5vh 0;
+  margin: 0 auto;
+  max-width: 1440px; }
 
 /* Contacts Section */
 .contacts-section {
@@ -116,14 +115,17 @@ p {
   line-height: 147%;
   color: #4F4F4F; }
 
+.contacts-email,
+.contacts-phone {
+  width: 250px; }
+
 .contacts-content {
   font-size: 20px;
   text-align: center;
   line-height: 147%; }
-
-.contacts-content a {
-  text-decoration: none;
-  color: #000000; }
+  .contacts-content a {
+    text-decoration: none;
+    color: #000000; }
 
 /* Team Section */
 .team-section {
@@ -175,13 +177,11 @@ p {
 .footer-socials {
   display: flex;
   padding-right: 1.5vw; }
-
-.footer-socials a {
-  height: 28px;
-  padding: 0 0.5vw; }
-
-.footer-socials img:hover {
-  filter: invert(100%); }
+  .footer-socials a {
+    height: 28px;
+    padding: 0 .5vw; }
+  .footer-socials img:hover {
+    filter: invert(100%); }
 
 /* FAQ Questions Section */
 .questions-section {
@@ -192,9 +192,8 @@ p {
   display: grid;
   grid-template-columns: auto fit-content(1%);
   padding: 2vh 0; }
-
-.questions-list-item img:hover {
-  cursor: pointer; }
+  .questions-list-item img:hover {
+    cursor: pointer; }
 
 .questions-list-item__arrow {
   transform: rotate(0grad); }
@@ -237,14 +236,14 @@ p {
     display: none; }
   .show {
     display: initial; }
-  .show ul {
-    display: flex;
-    justify-content: space-around;
-    padding-left: 0;
-    list-style: none; }
-  .show a {
-    text-transform: uppercase;
-    text-decoration: none; }
+    .show ul {
+      display: flex;
+      justify-content: space-around;
+      padding-left: 0;
+      list-style: none; }
+    .show a {
+      text-transform: uppercase;
+      text-decoration: none; }
   .navigation-menu, .auth-button {
     display: none; }
   h1 {
@@ -258,8 +257,8 @@ p {
     flex-direction: column;
     align-items: center;
     min-width: initial; }
-  .contacts img {
-    display: none; }
+    .contacts img {
+      display: none; }
   .contacts-email, .contacts-phone {
     width: 100%;
     padding: 1vh 0 1vh; }
@@ -269,9 +268,9 @@ p {
     font-size: 14px; }
   .team-member {
     width: 40%; }
-  .team-member img {
-    width: 80px;
-    height: 80px; }
+    .team-member img {
+      width: 80px;
+      height: 80px; }
   .team-member-name {
     font-size: 16px; }
   .team-member-position {
@@ -296,5 +295,3 @@ p {
     font-size: 12px; }
   .team-member-position {
     font-size: 10px; } }
-
-/*# sourceMappingURL=styles.css.map */
