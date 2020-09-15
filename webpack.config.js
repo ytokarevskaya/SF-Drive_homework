@@ -29,17 +29,18 @@ module.exports = {
       {
         test: /\.(css|scss)$/,
         use: [
+          'style-loader',
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
               esModule: true,
             },
           },
-          'less-loader',
-          'sass-loader',
-          'style-loader',
           'css-loader',
+          'sass-loader',
         ],
+      },
+      {
         test: /\.js$/,
         exclude: '/node_modules/',
         use: 'eslint-loader',
