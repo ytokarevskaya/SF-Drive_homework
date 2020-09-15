@@ -1,5 +1,8 @@
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const TerserWebpackPlugin = require('terser-webpack-plugin');
+const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
   plugins: [
@@ -11,16 +14,20 @@ module.exports = {
         {from: 'img', to: 'img'},
         {from: '*.html', to: ''},
       ]
-    })
+    }),
+    new TerserWebpackPlugin(),
+    new OptimizeCssAssetsWebpackPlugin(),
+    new StylelintPlugin(),
   ],
-  entry: "./js/main.js",
+  entry: './js/main.js',
+  mode: 'development',
   output: {
-    filename: "js/main.js",
+    filename: 'js/main.js',
   },
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.(css|scss)$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -28,8 +35,14 @@ module.exports = {
               esModule: true,
             },
           },
-          "css-loader",
+          'less-loader',
+          'sass-loader',
+          'style-loader',
+          'css-loader',
         ],
+        test: /\.js$/,
+        exclude: '/node_modules/',
+        use: 'eslint-loader',
       },
     ],
   },
